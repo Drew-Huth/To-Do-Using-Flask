@@ -14,10 +14,11 @@ let createNewTask = function (taskName) {
   checkBox.type = "checkBox";
   editInput.type = "text";
   editButton.innerText = "Edit";
-  editButton.className = "edit";
+  editButton.className = "btn edit";
   deleteButton.innerText = "Delete";
-  deleteButton.className = "delete";
+  deleteButton.className = "btn delete";
   label.innerText = taskName;
+  label.className = 'txt-dark'
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
   listItem.appendChild(editInput);
@@ -85,3 +86,20 @@ let clear = function () {
 };
 
 clearButton.addEventListener("click", clear);
+
+function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+
+  var btns = document.querySelectorAll('.btn');
+  for (const btn of btns) {
+    btn.classList.toggle("btn-dark");
+  }
+
+  var lbls = document.querySelectorAll('.txt')
+  for (const lbl of lbls) {
+    lbl.classList.toggle("txt-dark");
+  }
+
+
+}
